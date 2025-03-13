@@ -1,0 +1,35 @@
+# List to store student information
+students = []
+
+
+def add_student(student_id, first_name, last_name, age, grade):
+    # Create a dictionary for the student
+    student = {
+        'id': student_id,
+        'first_name': first_name,
+        'last_name': last_name,
+        'age': age,
+        'grade': grade
+    }
+    
+    
+    students.append(student)
+    print(f"{first_name} {last_name} has been successfully added!")
+
+def display_students():
+    if not students:
+        print("No students found.")
+        return
+    
+    
+    for student in students:
+        print(f"ID: {student['id']}, Name: {student['first_name']} {student['last_name']}, Age: {student['age']}, Grade: {student['grade']}")
+
+
+if __name__ == "__main__":
+    add_student(1, 'Ali', 'Yılmaz', 21, 'A')
+    add_student(2, 'Ayşe', 'Kaya', 22, 'B')
+    add_student(3, 'Murat', 'Demir', 20, 'C')
+    add_student(4, 'Fatma', 'Öz', 23, 'B+')
+    
+    display_students()
